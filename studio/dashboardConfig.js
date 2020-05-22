@@ -12,16 +12,16 @@ export default {
                 'NOTE: Because these sites are static builds, they need to be re-deployed to see the changes when documents are published.',
               sites: [
                 {
-                  buildHookId: '5ebbdfa5b90924356b3d2e76',
+                  buildHookId: '5ec7dbe157f7e89bb5d6521c',
                   title: 'Sanity Studio',
-                  name: 'nick-lewis-studio',
-                  apiId: '34159c43-8b2e-4424-8a63-9342bf9dd04c'
+                  name: 'walks-today-studio',
+                  apiId: 'bd471621-7f52-4792-b07c-a467f534c647'
                 },
                 {
-                  buildHookId: '5ebbdfa57a239b28484cd5a4',
+                  buildHookId: '5ec7dc3d8203aa377862f13a',
                   title: 'Website',
-                  name: 'nick-lewis-web',
-                  apiId: '24b8e437-041f-4ca4-b886-760b151c1496'
+                  name: 'walks-today-web',
+                  apiId: 'fb829975-26c2-4bc5-856a-e3b7f5fad53b'
                 }
               ]
             }
