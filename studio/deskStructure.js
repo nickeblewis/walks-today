@@ -2,6 +2,7 @@ import S from '@sanity/desk-tool/structure-builder'
 import { MdMenu } from 'react-icons/lib/md'
 import { GoBrowser as PageIcon, GoHome, GoSettings } from 'react-icons/lib/go'
 import blog from './src/structure/blog'
+import places from './src/structure/places'
 import landingPages from './src/structure/landingPages'
 import PreviewIFrame from './src/components/previewIFrame'
 
@@ -35,6 +36,7 @@ export default () =>
             .views([S.view.form(), PreviewIFrame()])
         ),
       blog,
+      places,
       landingPages,
       // This returns an array of all the document types
       // defined in schema.js. We filter out those that we have
