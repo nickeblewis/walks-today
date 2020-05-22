@@ -30,10 +30,10 @@ export default {
         data: [
           {
             title: 'GitHub repo',
-            value: 'https://github.com/nickeblewis/sanity-kitchen-sink',
+            value: 'https://github.com/nickeblewis/walks-today',
             category: 'Code'
           },
-          {title: 'Frontend', value: 'https://sanity-kitchen-sink-web-uo9uftjp.netlify.app', category: 'apps'}
+          {title: 'Frontend', value: 'https://walks-today-web.netlify.app', category: 'apps'}
         ]
       }
     },
