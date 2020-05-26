@@ -2,7 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
-import BlogPost from "../components/blog-post";
+import PlacePost from "../components/place-post";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
 import { toPlainText } from "../lib/helpers";
@@ -77,7 +77,7 @@ const WaypointPostTemplate = (props) => {
         </Container>
       )}
 
-      {post && <BlogPost {...post} />}
+      {post && <PlacePost {...post} />}
     </Layout>
   );
 };

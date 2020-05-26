@@ -29,6 +29,12 @@ module.exports = {
         watchMode: !isProd,
         overlayDrafts: !isProd
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-google-adsense`,
+      options: {
+        publisherId: `ca-pub-xxxxxxxxxx`
+      },
+    },
   ]
 };
