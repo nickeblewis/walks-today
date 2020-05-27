@@ -32,9 +32,17 @@ export const query = graphql`
           name
           _rawExcerpt
           location {
+            name
             slug {
               current
             }
+          }
+          geolocation {
+            _key
+            _type
+            lat
+            lng
+            alt
           }
           slug {
             current

@@ -107,6 +107,7 @@ async function createPoiPostPages(pathPrefix = "/places", graphql, actions, repo
             id
             publishedAt
             location {
+              name
               slug {
                 current
               }

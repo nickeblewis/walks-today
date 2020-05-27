@@ -53,7 +53,7 @@ function PlacePost (props) {
             {location && (
               <div className={styles.location}>
               <h3 className={styles.locationHeadline}>Location</h3>
-              {{location}}
+              {location.name}
             </div>
             )}
           </aside>

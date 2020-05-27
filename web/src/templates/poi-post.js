@@ -24,6 +24,16 @@ export const query = graphql`
       slug {
         current
       }
+      location {
+        name
+        slug {
+          current
+        }
+      }
+      geolocation {
+        lat
+        lng
+      }
       _rawExcerpt(resolveReferences: { maxDepth: 5 })
       _rawBody(resolveReferences: { maxDepth: 5 })
       authors {

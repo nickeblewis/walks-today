@@ -116,6 +116,7 @@
 .categoriesHeadline {
   composes: base from "./typography.module.css";
   margin: 0.5rem 0 0;
+  color: #467288;
 }
 
 .location {
@@ -136,4 +137,5 @@
 .locationHeadline {
   composes: base from "./typography.module.css";
   margin: 0.5rem 0 0;
+  color: #467288;
 }
