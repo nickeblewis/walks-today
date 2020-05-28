@@ -26,6 +26,16 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
           resolve: (source) => new Date(source.publishedAt) <= new Date(),
         },
       },
+    }),
+    schema.buildObjectType({
+      name: "SanityWalk",
+      interfaces: ["Node"],
+      fields: {
+        isPublished: {
+          type: "Boolean!",
+          resolve: (source) => new Date(source.publishedAt) <= new Date(),
+        },
+      },
     })
   ]);
 };
@@ -137,8 +147,45 @@ async function createPoiPostPages(pathPrefix = "/places", graphql, actions, repo
       });
     });
 }
+
+async function createWalkPages(pathPrefix = "/walks", graphql, actions, reporter) {
+  const { createPage } = actions;
+  const result = await graphql(`
+    {
+      allSanityWalk(filter: { slug: { current: { ne: null } }, isPublished: { eq: true } }) {
+        edges {
+          node {
+            id
+            publishedAt
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  if (result.errors) throw result.errors;
+
+  const postEdges = (result.data.allSanityWalk || {}).edges || [];
+  postEdges
+    .filter((edge) => !isFuture(edge.node.publishedAt))
+    .forEach((edge) => {
+      const { id, slug = {} } = edge.node;
+      const path = `${pathPrefix}/${slug.current}/`;
+      reporter.info(`Creating walk page: ${path}`);
+      createPage({
+        path,
+        component: require.resolve("./src/templates/walk-post.js"),
+        context: { id },
+      });
+    });
+}
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
   await createLandingPages("/", graphql, actions, reporter);
   await createBlogPostPages("/blog", graphql, actions, reporter);
   await createPoiPostPages("/places", graphql, actions, reporter);
+  await createWalkPages("/walks", graphql, actions, reporter);
 };

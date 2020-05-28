@@ -25,6 +25,10 @@ export function getPlaceUrl(location, slug) {
   return `/places/${location}/${slug.current || slug}/`;
 }
 
+export function getWalkUrl(slug) {
+  return `/walks/${slug.current || slug}/`;
+}
+
 export function buildImageObj(source = { asset: {} }) {
   const imageObj = {
     asset: { _ref: source.asset._ref || source.asset._id }

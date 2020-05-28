@@ -1,8 +1,8 @@
 {
   "private": true,
-  "name": "sanity-kitchen-sink-web",
+  "name": "walks.today",
   "version": "1.0.0",
-  "author": "Sanity <hello@sanity.io>",
+  "author": "Nick Lewis <nickeblewis@gmail.com>",
   "scripts": {
     "tailwind:css": "tailwind build src/css/tailwind.src.css -c  tailwind.js -o src/css/tailwind.css",
     "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",

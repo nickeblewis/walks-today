@@ -37,6 +37,27 @@ export default {
   ],
   fields: [
     {
+      name: "publishedAt",
+      type: "datetime",
+      title: "Published at",
+      description: "This can be used to schedule post for publishing",
+      fieldset: "about",
+    },
+    {
+      name: "mainImage",
+      type: "mainImage",
+      title: "Main image",
+      fieldset: "about",
+    },
+    {
+      name: "excerpt",
+      type: "excerptPortableText",
+      title: "Excerpt",
+      fieldset: "about",
+      description:
+        "This ends up on summary pages, on Google, when people share your post in social media.",
+    },
+    {
       name: "name",
       title: "Name",
       type: "string",
@@ -52,6 +73,12 @@ export default {
         source: "name",
         maxLength: 100,
       },
+    },
+    {
+      name: "body",
+      type: "bodyPortableText",
+      title: "Body",
+      fieldset: "about",
     },
     {
       name: "description",
@@ -118,11 +145,14 @@ export default {
       fieldset: "contact",
     },
     {
-      name: "author",
-      title: "Author",
-      type: "reference",
-      to: [{ type: "author" }],
-      fieldset: "about",
+      name: 'authors',
+      title: 'Authors',
+      type: 'array',
+      of: [
+        {
+          type: 'authorReference',
+        },
+      ],
     },
     {
       name: "timeToWalk",
@@ -194,6 +224,6 @@ export default {
     },
   ],
   preview: {
-    select: { title: "name", media: "image" },
+    select: { title: "name", media: "mainImage" },
   },
 };
