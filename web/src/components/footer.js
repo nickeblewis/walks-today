@@ -36,32 +36,32 @@ const Footer = ({ siteTitle }) => (
         <div className="flex-1">
           <p className="uppercase text-gray-500 md:mb-6">Links</p>
           <ul className="list-reset mb-6">
-            <li className="mt-2 inline-block mr-2 md:block md:mr-0">
+            {/* <li className="mt-2 inline-block mr-2 md:block md:mr-0">
               <a href="https://www.tailwindtoolbox.com/templates/landing-page">
                 <span className="hover:underline text-gray-800 hover:text-orange-500">
                   Page theme
                 </span>
               </a>
-            </li>
+            </li> */}
             <li className="mt-2 inline-block mr-2 md:block md:mr-0">
               <a
-                href="https://sanity.io/docs"
+                href="https://sanity.io"
                 className="no-underline hover:underline text-gray-800 hover:text-orange-500"
               >
-                Sanity Help
+                Sanity
               </a>
             </li>
-            <li className="mt-2 inline-block mr-2 md:block md:mr-0">
+            {/* <li className="mt-2 inline-block mr-2 md:block md:mr-0">
               <a
                 href="https://slack.sanity.io"
                 className="no-underline hover:underline text-gray-800 hover:text-orange-500"
               >
                 Slack Community
               </a>
-            </li>
+            </li> */}
           </ul>
         </div>
-        <div className="flex-1">
+        {/* <div className="flex-1">
           <p className="uppercase text-gray-500 md:mb-6">Legal</p>
           <ul className="list-reset mb-6">
             <li className="mt-2 inline-block mr-2 md:block md:mr-0">
@@ -75,26 +75,26 @@ const Footer = ({ siteTitle }) => (
               </span>
             </li>
           </ul>
-        </div>
+        </div> */}
         <div className="flex-1">
           <p className="uppercase text-gray-500 md:mb-6">Social</p>
           <ul className="list-reset mb-6">
             <li className="mt-2 inline-block mr-2 md:block md:mr-0">
               <a
-                href="https://twitter.com/sanity_io"
+                href="https://twitter.com/nicklewis"
                 className="no-underline hover:underline text-gray-800 hover:text-orange-500"
               >
                 Twitter
               </a>
             </li>
-            <li className="mt-2 inline-block mr-2 md:block md:mr-0">
+            {/* <li className="mt-2 inline-block mr-2 md:block md:mr-0">
               <a
                 href="https://www.linkedin.com/company/sanity-io/"
                 className="no-underline hover:underline text-gray-800 hover:text-orange-500"
               >
                 Linkedin
               </a>
-            </li>
+            </li> */}
           </ul>
         </div>
         <div className="flex-1">
@@ -110,10 +110,10 @@ const Footer = ({ siteTitle }) => (
             </li>
             <li className="mt-2 inline-block mr-2 md:block md:mr-0">
               <a
-                href="https://www.sanity.io/contact"
+                href="/places"
                 className="no-underline hover:underline text-gray-800 hover:text-orange-500"
               >
-                Contact
+                Places
               </a>
             </li>
           </ul>
