@@ -9,9 +9,17 @@ import PortableText from "./portableText";
 import Container from "./container";
 import AuthorList from "./author-list";
 
+import Img from "gatsby-image"
+
+
 import { Marker, GoogleMap, LoadScript } from "@react-google-maps/api";
 
 import styles from "./place-post.module.css";
+
+import Gallery from '@browniebroke/gatsby-image-gallery'
+import '@browniebroke/gatsby-image-gallery/dist/style.css'
+
+
 
 function PlacePost(props) {
   const {
@@ -20,6 +28,7 @@ function PlacePost(props) {
     categories,
     name,
     mainImage,
+    images,
     location,
     geolocation,
     publishedAt
@@ -56,6 +65,11 @@ function PlacePost(props) {
           <div className={styles.mainContent}>
             <h1 className={styles.title}>{name}</h1>
             {_rawBody && <PortableText blocks={_rawBody} />}
+            {images && images.map(
+              image => (
+                <Img fluid={image.asset.fluid} />
+              )
+            )}
           </div>
           <aside className={styles.metaContent}>
             {publishedAt && (
