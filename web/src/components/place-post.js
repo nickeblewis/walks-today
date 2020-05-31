@@ -1,5 +1,6 @@
 import { format, distanceInWords, differenceInDays } from "date-fns";
 import React from "react";
+import Carousel from 'react-images'
 //import L from 'leaflet'
 // import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 
@@ -36,14 +37,18 @@ function PlacePost(props) {
 
   const position = [geolocation.lat, geolocation.lng];
   const containerStyle = {
-    width: "400px",
-    height: "400px"
+    width: "100%",
+    height: "300px"
   };
 
   const center = {
     lat: geolocation.lat,
     lng: geolocation.lng
   };
+
+  // let imgArr = images.map(a => a.asset.fluid.src)
+
+
   return (
     <article className={styles.root}>
       {mainImage && mainImage.asset && (
@@ -64,12 +69,22 @@ function PlacePost(props) {
         <div className={styles.grid}>
           <div className={styles.mainContent}>
             <h1 className={styles.title}>{name}</h1>
+            <div className={styles.leaflet}>
+              <LoadScript googleMapsApiKey="AIzaSyBOCOkC1JUl9lbAdyOfqRpFp5vvS5QrNpQ">
+                <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={14}>
+                  {/* Child components, such as markers, info windows, etc. */}
+                  <Marker position={center} />
+                </GoogleMap>
+              </LoadScript>
+            </div>
             {_rawBody && <PortableText blocks={_rawBody} />}
+            {/* <Carousel views={imgArr} /> */}
+            {/* <Gallery images={images} thumbs={imgArr} />
             {images && images.map(
               image => (
                 <Img fluid={image.asset.fluid} />
               )
-            )}
+            )} */}
           </div>
           <aside className={styles.metaContent}>
             {publishedAt && (
@@ -97,14 +112,6 @@ function PlacePost(props) {
                 <span class="inline-block bg-teal-200 text-teal-800 text-xs px-2 rounded-full uppercase font-semibold tracking-wide">{location.name}</span>
               </div>
             )}
-            <div className={styles.leaflet}>
-              <LoadScript googleMapsApiKey="AIzaSyBOCOkC1JUl9lbAdyOfqRpFp5vvS5QrNpQ">
-                <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={14}>
-                  {/* Child components, such as markers, info windows, etc. */}
-                  <Marker position={center} />
-                </GoogleMap>
-              </LoadScript>
-            </div>
           </aside>
         </div>
       </Container>

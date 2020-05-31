@@ -20,20 +20,16 @@ export const query = graphql`
         ...SanityImage
         alt
       }
-      images
-        {
-
-            asset {
-              id
-              _rev
-              _key
-              fluid(maxWidth: 700) {
-                ...GatsbySanityImageFluid
-              }
-            }
+      images {
+        asset {
+          id
+          _rev
+          _key
+          fluid(maxWidth: 700) {
+            ...GatsbySanityImageFluid
           }
-
-
+        }
+      }
       name
       slug {
         current
