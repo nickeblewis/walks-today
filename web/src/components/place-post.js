@@ -1,6 +1,6 @@
 import { format, distanceInWords, differenceInDays } from "date-fns";
 import React from "react";
-import Carousel from 'react-images'
+// import Carousel from 'react-images'
 //import L from 'leaflet'
 // import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 
@@ -17,8 +17,8 @@ import { Marker, GoogleMap, LoadScript } from "@react-google-maps/api";
 
 import styles from "./place-post.module.css";
 
-import Gallery from '@browniebroke/gatsby-image-gallery'
-import '@browniebroke/gatsby-image-gallery/dist/style.css'
+// import Gallery from '@browniebroke/gatsby-image-gallery'
+// import '@browniebroke/gatsby-image-gallery/dist/style.css'
 
 
 
@@ -48,7 +48,6 @@ function PlacePost(props) {
 
   // let imgArr = images.map(a => a.asset.fluid.src)
 
-
   return (
     <article className={styles.root}>
       {mainImage && mainImage.asset && (
@@ -69,7 +68,7 @@ function PlacePost(props) {
         <div className={styles.grid}>
           <div className={styles.mainContent}>
             <h1 className={styles.title}>{name}</h1>
-            <div className={styles.leaflet}>
+            <div className={styles.gmap}>
               <LoadScript googleMapsApiKey="AIzaSyBOCOkC1JUl9lbAdyOfqRpFp5vvS5QrNpQ">
                 <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={14}>
                   {/* Child components, such as markers, info windows, etc. */}
@@ -79,8 +78,16 @@ function PlacePost(props) {
             </div>
             {_rawBody && <PortableText blocks={_rawBody} />}
             {/* <Carousel views={imgArr} /> */}
-            {/* <Gallery images={images} thumbs={imgArr} />
-            {images && images.map(
+            {/* {/* <Gallery images={images} thumbs={imgArr} /> */}
+            <div className="container mx-auto p-8">
+              <div className="flex flex-row flex-wrap -mx-2">
+              {images && images.map((image, index) => (
+                <div className="w-full md:w-1/2 h-64 md:h-auto mb-4 px-2">
+<Img key={index} fluid={image.asset.fluid} />
+                </div>))}
+              </div>
+            </div>
+            {/* {images && images.map(
               image => (
                 <Img fluid={image.asset.fluid} />
               )
@@ -100,7 +107,7 @@ function PlacePost(props) {
                 <h3 className={styles.categoriesHeadline}>Categories</h3>
                 <ul>
                   {categories.map(category => (
-                    <li key={category._id}><span class="inline-block bg-teal-200 text-teal-800 text-xs px-2 rounded-full uppercase font-semibold tracking-wide">{category.title}</span></li>
+                    <li key={category._id}><span className="inline-block bg-teal-200 text-teal-800 text-xs px-2 rounded-full uppercase font-semibold tracking-wide">{category.title}</span></li>
                   ))}
                 </ul>
               </div>
@@ -109,7 +116,7 @@ function PlacePost(props) {
               <div className={styles.location}>
                 <h3 className={styles.locationHeadline}>Location</h3>
 
-                <span class="inline-block bg-teal-200 text-teal-800 text-xs px-2 rounded-full uppercase font-semibold tracking-wide">{location.name}</span>
+                <span className="inline-block bg-teal-200 text-teal-800 text-xs px-2 rounded-full uppercase font-semibold tracking-wide">{location.name}</span>
               </div>
             )}
           </aside>
