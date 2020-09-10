@@ -69,7 +69,7 @@ function PlacePost(props) {
           <div className={styles.mainContent}>
             <h1 className={styles.title}>{name}</h1>
             <div className={styles.gmap}>
-              <LoadScript googleMapsApiKey="AIzaSyBOCOkC1JUl9lbAdyOfqRpFp5vvS5QrNpQ">
+              <LoadScript googleMapsApiKey="AIzaSyACo0oNKBpPRs7DLvPOOCKwv_XCqw-MY-E">
                 <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={14}>
                   {/* Child components, such as markers, info windows, etc. */}
                   <Marker position={center} />
