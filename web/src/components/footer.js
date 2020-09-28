@@ -16,6 +16,7 @@ const Footer = ({ siteTitle }) => (
               viewBox="0 0 512.005 512.005"
             >
               <rect
+                fill="#2a2a31"
                 x="16.539"
                 y="425.626"
                 width="479.767"
