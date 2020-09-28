@@ -13,30 +13,29 @@ function StepList ({steps}) {
         {steps.map(({step, waypoint, _key}) => {
           // const authorName = author && author.name
           return (
-            <li key={_key} className={styles.listItem}>
+            <div key={_key}>
               <div>
-                <div className={styles.avatar}>
+                {/* <div className={styles.avatar}> */}
+                {waypoint &&
+                <Link
+                to={getPlaceUrl(waypoint.location.slug.current, waypoint.slug.current)}><h2>{waypoint.name}</h2></Link>}
                   {waypoint && waypoint.mainImage && waypoint.mainImage.asset && (
                     <img
                       src={imageUrlFor(buildImageObj(waypoint.mainImage))
-                        .width(100)
-                        .height(100)
-                        .fit('crop')
+                        .width(800)
                         .url()}
                       alt=''
                     />
                   )}
                   {_key}
-                </div>
+                {/* </div> */}
               </div>
               <div>
                 {/* <div>{authorName || <em>Missing name</em>}</div> */}
-                <div>{step}</div>
-                {waypoint &&
-                <Link
-  to={getPlaceUrl(waypoint.location.slug.current, waypoint.slug.current)}>{waypoint.name}</Link>}
+                
+                <div><p>{step}</p></div>
               </div>
-            </li>
+            </div>
           )
         })}
       </ul>
