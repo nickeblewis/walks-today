@@ -35,7 +35,7 @@ function PlacePost(props) {
     publishedAt
   } = props;
 
-  const position = [geolocation.lat, geolocation.lng];
+  //const position = [geolocation.lat, geolocation.lng];
   const containerStyle = {
     width: "100%",
     height: "300px"

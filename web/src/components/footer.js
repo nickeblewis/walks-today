@@ -6,17 +6,16 @@ const Footer = ({ siteTitle }) => (
     <div className="container mx-auto  px-8">
       <div className="w-full flex flex-col md:flex-row py-6">
         <div className="flex-1 mb-6">
-          <a
+          {/* <a
             className="text-orange-600 no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
             href="#"
-          >
+          > */}
             <svg
               className="h-8 fill-current inline"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512.005 512.005"
             >
               <rect
-                fill="#2a2a31"
                 x="16.539"
                 y="425.626"
                 width="479.767"
@@ -30,7 +29,7 @@ const Footer = ({ siteTitle }) => (
               /> */}
             </svg>{" "}
             {siteTitle}
-          </a>
+          {/* </a> */}
         </div>
 
         <div className="flex-1">
