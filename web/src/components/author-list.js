@@ -28,7 +28,7 @@ function AuthorList ({items, title}) {
                 </div>
               </div>
               <div>
-                <div>{authorName || <em>Missing name</em>}</div>
+                <div><a href={author.href}>{authorName || <em>Missing name</em>}</a></div>
               </div>
             </li>
           )
