@@ -28,6 +28,11 @@ export default {
       options: {
         hotspot: true
       }
+    },
+    {
+      title: 'URL',
+      name: 'href',
+      type: 'url'
     }
   ],
   preview: {
