@@ -32,11 +32,11 @@ export default {
       type: 'mainImage',
       title: 'Main image',
     },
-    {
-      name: 'image',
-      type: 'image',
-      title: 'Image',
-    },
+    // {
+    //   name: 'image',
+    //   type: 'image',
+    //   title: 'Image',
+    // },
     {
       name: 'excerpt',
       type: 'excerptPortableText',
@@ -72,11 +72,11 @@ export default {
       type: 'bodyPortableText',
       title: 'Body',
     },
-    {
-        name: 'description',
-        title: 'Description',
-        type: 'blockContent'
-      },
+    // {
+    //     name: 'description',
+    //     title: 'Description',
+    //     type: 'blockContent'
+    //   },
       {
         name: 'location',
         title: 'Associated Location',
@@ -95,15 +95,15 @@ export default {
       type: 'array',
       of: [{type: 'image'}]
     },
-    {
-      name: 'publications',
-      title: 'Associated Publications',
-      type: 'array',
-      of: [{
-        type: 'reference',
-        to: [{type: 'publication'}]
-      }]
-    }
+    // {
+    //   name: 'publications',
+    //   title: 'Associated Publications',
+    //   type: 'array',
+    //   of: [{
+    //     type: 'reference',
+    //     to: [{type: 'publication'}]
+    //   }]
+    // }
   ],
   orderings: [
     {
